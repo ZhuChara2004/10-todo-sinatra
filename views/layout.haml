@@ -1,0 +1,25 @@
+!!! 5
+%head
+  %title= "#{@title} | Todo app"
+  %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+  %link{:href => '/css/bootstrap.min.css', :rel => 'stylesheet'}
+  %link{:href => '/css/bootstrap-responsive.min.css', :rel => 'stylesheet'}
+  %link{:href => '/css/custom.css', :rel => 'stylesheet'}
+
+  /[if lt IE 9]
+    %script{ :src => 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js' }
+    %script{ :src => 'https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js' }
+
+%body
+
+  .navbar.navbar-fixed-top
+    .navbar-inner
+      .container
+        %a.brand{:href => '/'} Todo list
+
+  .container
+    %h1= @title
+    = yield
+
+  %script{:src => 'http://code.jquery.com/jquery-1.8.3.min.js'}
+  %script{:src => '/js/bootstrap.min.js'}
