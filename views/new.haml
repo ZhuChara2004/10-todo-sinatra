@@ -1,0 +1,5 @@
+- @title = 'New item'
+
+%form.form-inline{:action => '/new', :method => 'POST'}
+  %input#todo_content.input-xlarge{:name => 'item[body]', :placeholder => 'Todo item', :type => 'text', :value => @item.body}/
+  %button.btn.btn-primary{:type => 'submit'} Add Todo item

@@ -1,0 +1,9 @@
+- @title = 'Index'
+
+%ul#todo-list.unstyled
+  - @items.each do |item|
+    %li{:id => item[:id]}
+      %span.item= item[:completed] ? "<del>#{item[:body]}</del>" : item[:body]
+      %span.pull-right
+        %a.btn.btn-danger{:href => "/delete/#{item[:id]}"} Delete
+%a.btn.btn-primary{:href => "/new"} Add todo item
