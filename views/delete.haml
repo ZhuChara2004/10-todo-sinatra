@@ -1,0 +1,6 @@
+%p Are you sure you want to delete:
+%blockquote
+  %p= @item.body
+%form{:action => "/delete/#{@item.id}", :method => 'POST'}
+  %button.btn.btn-primary{:name => 'ok', :type => 'submit'} OK
+  %button.btn{:name => 'cancel', :type => 'submit'} Cancel

@@ -26,4 +26,17 @@ post '/new' do
   end
 end
 
+get '/delete/:id' do
+  @item = Item.find(params[:id])
+  haml :delete
+end
 
+post '/delete/:id' do
+  if params.has_key?('ok')
+    item = Item.find(params[:id])
+    item.destroy
+    redirect '/'
+  else
+    redirect '/'
+  end
+end
