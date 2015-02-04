@@ -7,7 +7,7 @@ end
 
 get '/' do
   @items = Item.order('created_at desc')
-
+  redirect '/new' if @items.count == 0
   haml :index
 end
 
